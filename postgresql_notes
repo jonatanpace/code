@@ -1,0 +1,4 @@
+postgresql most used statements
+
+Convert timestamp to date
+adset_date_at::timestamp::date AS date_day_2,
