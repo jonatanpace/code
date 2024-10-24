@@ -11,5 +11,27 @@ pd.set_option('display.max_colwidth', None)
 import warnings
 warnings.filterwarnings("ignore")
 
-# Gradiente de colores
+
+==================================================================================
+# GRADIENTE DE COLORES DE DATAWRAPPER PARA USAR EN GRÁFICOS Y EN HEATMAPS
 cmap_custom = mcolors.LinearSegmentedColormap.from_list("custom_gradient", ["#f0f9e8", '#b6e3bb','#75c8c5','#4ba8c9','#2989bd','#0a6aad', "#254b8c"])
+
+===================================================================================
+MOSTRAR EN FORMATO DE TABLA LA SALIDA DE UN DESCRIBE
+
+summary_secs = sessions[sessions['event_order']>1].seconds_btw_sessions.describe()
+
+pretty_summary = pd.DataFrame({
+    'Metric': ['Count', 'Mean', 'Standard Deviation', 'Minimum', '25th Percentile', 'Median (50th Percentile)', '75th Percentile', 'Maximum'],
+    'Seconds between Sessions': [f'{summary_secs["count"]:.0f}', 
+              f'{summary_secs["mean"]:.2f}', 
+              f'{summary_secs["std"]:.2f}', 
+              f'{summary_secs["min"]:.2f}', 
+              f'{summary_secs["25%"]:.2f}', 
+              f'{summary_secs["50%"]:.2f}', 
+              f'{summary_secs["75%"]:.2f}', 
+              f'{summary_secs["max"]:.2f}']
+})
+
+pretty_summary
+==================================================================================
