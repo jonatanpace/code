@@ -23,6 +23,7 @@ warnings.filterwarnings("ignore")
 
 ==================================================================================
 # GRADIENTE DE COLORES DE DATAWRAPPER PARA USAR EN GRÁFICOS Y EN HEATMAPS
+from matplotlib import colors as mcolors
 cmap_custom = mcolors.LinearSegmentedColormap.from_list("custom_gradient", ["#f0f9e8", '#b6e3bb','#75c8c5','#4ba8c9','#2989bd','#0a6aad', "#254b8c"])
 
 ===================================================================================
